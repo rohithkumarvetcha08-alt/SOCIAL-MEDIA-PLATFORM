@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SocialConnect - Social Media Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            SocialConnect
+        </div>
+
+        <div class="nav-links">
+            <button onclick="showHome()">Home</button>
+            <button onclick="showProfile()">Profile</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+    </nav>
+
+
+    <!-- HOME SECTION -->
+    <section id="homeSection">
+
+        <main class="container">
+
+            <!-- Create Post -->
+            <section class="create-post">
+
+                <h2>Create a Post</h2>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your name"
+                >
+
+                <textarea
+                    id="postText"
+                    placeholder="What's on your mind?"
+                ></textarea>
+
+                <button onclick="createPost()">
+                    Post
+                </button>
+
+            </section>
+
+
+            <!-- Social Feed -->
+            <section class="feed">
+
+                <h2>Social Feed</h2>
+
+                <div id="postsContainer"></div>
+
+            </section>
+
+        </main>
+
+    </section>
+
+
+    <!-- PROFILE SECTION -->
+    <section id="profileSection" class="profile-section">
+
+        <div class="profile-card">
+
+            <div class="profile-picture">
+                👤
+            </div>
+
+            <h1 id="profileName">
+                User Profile
+            </h1>
+
+            <p>
+                Welcome to your SocialConnect profile.
+            </p>
+
+            <div class="profile-info">
+
+                <div>
+                    <strong id="postCount">0</strong>
+                    <span>Posts</span>
+                </div>
+
+                <div>
+                    <strong>120</strong>
+                    <span>Followers</span>
+                </div>
+
+                <div>
+                    <strong>80</strong>
+                    <span>Following</span>
+                </div>
+
+            </div>
+
+            <button onclick="showHome()" class="home-button">
+                Back to Home
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOGOUT SECTION -->
+    <section id="logoutSection" class="logout-section">
+
+        <div class="logout-card">
+
+            <h1>You have been logged out</h1>
+
+            <p>
+                Thank you for using SocialConnect.
+            </p>
+
+            <button onclick="loginAgain()">
+                Login Again
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
