@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SocialConnect - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            SocialConnect Admin
+        </div>
+
+        <div class="nav-links">
+            <button onclick="showDashboard()">Dashboard</button>
+            <button onclick="showUsers()">Users</button>
+            <button onclick="showPosts()">Posts</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+    </nav>
+
+
+    <!-- ADMIN DASHBOARD -->
+    <section id="dashboardSection" class="profile-section">
+
+        <div class="profile-card">
+
+            <div class="profile-picture">
+                🛡️
+            </div>
+
+            <h1>
+                Admin Dashboard
+            </h1>
+
+            <p>
+                Welcome to the SocialConnect administration panel.
+            </p>
+
+            <div class="profile-info">
+
+                <div>
+                    <strong id="totalUsers">150</strong>
+                    <span>Users</span>
+                </div>
+
+                <div>
+                    <strong id="totalPosts">320</strong>
+                    <span>Posts</span>
+                </div>
+
+                <div>
+                    <strong id="activeUsers">120</strong>
+                    <span>Active Users</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- USERS SECTION -->
+    <section id="usersSection" class="container">
+
+        <section class="feed">
+
+            <h2>Manage Users</h2>
+
+            <div class="admin-table">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>1</td>
+                            <td>John</td>
+                            <td>john@example.com</td>
+                            <td>Active</td>
+                            <td>
+                                <button onclick="deleteUser(1)">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>David</td>
+                            <td>david@example.com</td>
+                            <td>Active</td>
+                            <td>
+                                <button onclick="deleteUser(2)">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Sarah</td>
+                            <td>sarah@example.com</td>
+                            <td>Blocked</td>
+                            <td>
+                                <button onclick="deleteUser(3)">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- POSTS SECTION -->
+    <section id="postsSection" class="container">
+
+        <section class="feed">
+
+            <h2>Manage Posts</h2>
+
+            <div id="adminPostsContainer">
+
+                <div class="post">
+                    <h3>John</h3>
+
+                    <p>
+                        Welcome to SocialConnect!
+                    </p>
+
+                    <button onclick="deletePost(1)">
+                        Delete Post
+                    </button>
+                </div>
+
+
+                <div class="post">
+                    <h3>David</h3>
+
+                    <p>
+                        Having a great day!
+                    </p>
+
+                    <button onclick="deletePost(2)">
+                        Delete Post
+                    </button>
+                </div>
+
+
+                <div class="post">
+                    <h3>Sarah</h3>
+
+                    <p>
+                        Enjoying SocialConnect.
+                    </p>
+
+                    <button onclick="deletePost(3)">
+                        Delete Post
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- LOGOUT SECTION -->
+    <section id="logoutSection" class="logout-section">
+
+        <div class="logout-card">
+
+            <h1>Admin Logged Out</h1>
+
+            <p>
+                You have successfully logged out of the admin panel.
+            </p>
+
+            <button onclick="loginAgain()">
+                Login Again
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        function hideAllSections() {
+            document.getElementById("dashboardSection").style.display = "none";
+            document.getElementById("usersSection").style.display = "none";
+            document.getElementById("postsSection").style.display = "none";
+            document.getElementById("logoutSection").style.display = "none";
+        }
+
+
+        function showDashboard() {
+            hideAllSections();
+            document.getElementById("dashboardSection").style.display = "block";
+        }
+
+
+        function showUsers() {
+            hideAllSections();
+            document.getElementById("usersSection").style.display = "block";
+        }
+
+
+        function showPosts() {
+            hideAllSections();
+            document.getElementById("postsSection").style.display = "block";
+        }
+
+
+        function logout() {
+            hideAllSections();
+            document.getElementById("logoutSection").style.display = "block";
+        }
+
+
+        function loginAgain() {
+            showDashboard();
+        }
+
+
+        function deleteUser(id) {
+
+            if (confirm("Are you sure you want to delete this user?")) {
+                alert("User " + id + " deleted successfully.");
+            }
+
+        }
+
+
+        function deletePost(id) {
+
+            if (confirm("Are you sure you want to delete this post?")) {
+                alert("Post " + id + " deleted successfully.");
+            }
+
+        }
+
+
+        // Show dashboard when page loads
+        showDashboard();
+
+    </script>
+
+</body>
+</html>
